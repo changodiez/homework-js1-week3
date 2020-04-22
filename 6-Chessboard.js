@@ -19,3 +19,20 @@ When you have a program that generates this pattern, define a binding size
 = 8 and change the program so that it works for any size, outputting a grid
 of the given width and height
 */
+
+function isEven(n){
+    return n % 2 === 0;
+}
+
+var chessboard = "";
+var size = 4;
+
+for (var i = 0; i < 8; i += 1) {
+    if (isEven(i)){
+     for (var c = 0; c >size ; i += 1){
+         chessboard += "# ";
+     }
+    }
+  console.log("loop", i);
+}
+console.log(chessboard);
