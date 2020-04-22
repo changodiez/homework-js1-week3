@@ -20,19 +20,43 @@ When you have a program that generates this pattern, define a binding size
 of the given width and height
 */
 
-function isEven(n){
+/* 
+# # # ## # # #  FIRST WAY # # # ## # # ## # # #
+*/
+
+function Chessboard(width, height){
+
+function isEven(n) {
     return n % 2 === 0;
 }
 
 var chessboard = "";
-var size = 4;
+var width = width*2;
+for (j = 0; j < height; j++) {
+    if (isEven(j)) {
+        for (i = 0; i < width; i++) {
+            if (isEven(i)) {
+                chessboard += " ";
+            } else {
+                chessboard += "#";
+            }
+        }
 
-for (var i = 0; i < 8; i += 1) {
-    if (isEven(i)){
-     for (var c = 0; c >size ; i += 1){
-         chessboard += "# ";
-     }
-    }
-  console.log("loop", i);
+        chessboard += '\n';
+    } else {
+        for (i = 0; i < width; i++) {
+            if (isEven(i)) {
+                chessboard += "#";
+            } else {
+                chessboard += " ";
+            }
+        }chessboard += '\n';
+    } 
+    
 }
-console.log(chessboard);
+
+return chessboard;
+}
+
+console.log(Chessboard(4,8));
+
